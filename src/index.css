@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--mainColor: #29335c;
+	--mainColorLight: #5767aa;
+	--secondaryColor: #db2b39;
+	--textColor: #eee;
+}
+
+body{
+  margin: 0;
+}
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.Regsiter
+{
+ overflow: hidden;
+height: 100vh;
+ width: 100%;
+}
+.Container
+{
+ background-image: url('./assets/reg.png');
+ background-position: center;
+ background-repeat: no-repeat;
+  background-size: cover;
+}
+#Email{
+  background-image: url('./assets/EmailIcon.png');
+  background-repeat: no-repeat;
+  background-size:25px;
+  background-position:20px 13px ;
+}
+#Password{
+  background-image: url('./assets/Passwordicon.png');
+  background-repeat: no-repeat;
+  background-size:25px;
+  background-position:20px 7px ;
+
+}
+#Username {
+  background-image: url('./assets/UserIcon.png');
+  background-repeat: no-repeat;
+  background-size:22px;
+  background-position:20px 13px ;
+}
+
+#toggler {
+  position: absolute;
+  right: 10px;
+  top: 60%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  
+  }
+
+  #Home{
+    overflow: hidden;
+    height: 100vh;
+     width: 100%;
+  }
+  #Home2{
+    height: 100vh;
+     width: 100%;
+  }
+
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding-left: 0.2rem;
+    padding-right: 12px;
+
+  }
+  
+
+  
+  header .nav-btn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--textColor);
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.8rem;
+
+  }
+  
+
+  
+  @media only screen and (max-width: 760px) {
+
+    header {
+     margin-top: 10px;
+
+    }
+    header .nav-btn {
+      visibility: visible;
+      opacity: 1;
+    }
+
+#Homeicon4{
+  position: absolute;
+  left: 45%;
+  top: 17%;
+  scale: 280%;
+
+}
+#Homeicon1{
+  position: absolute;
+  left: 10px;
+  top: 45%;
+  scale: 80%;
+ 
+}
+#Homeicon2{
+  position: absolute;
+  left: -24px;
+  top: 55%;
+  scale: 80%;
+
+}
+#Homeicon3{
+  position: absolute;
+  left: -32px;
+  top: 65%;
+  scale: 80%;
+}
+   
+
+  
+    header nav {
+      position: fixed;
+      top:-40px ;
+      left:-100% ;
+      height: 100%;
+      width: 100%;
+      gap: 1.5rem;
+      background-color:black;
+      transition: 1s;
+      background-image: url('./assets/ok.png');
+      background-repeat: no-repeat;
+      background-size: 100% 270px ;
+    }
+  
+    header .responsive_nav {
+      transform: translateX(100%);
+    }
+  
+    nav .nav-close-btn {
+      position: absolute;
+      top: 37px;
+      right: 20px;
+    }
+  
+    nav a {
+      font-size: 1.5rem;
+    }
+  }
