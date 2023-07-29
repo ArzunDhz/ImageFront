@@ -33,9 +33,9 @@ const SubmitHandler= async(e)=>{
     {auth ? <Navigate to={'/login'}/> : 
     
     <div className=" Regsiter bg-[#000A1A]  ">
-    <div className="Container  flex justify-center items-center  mx-auto lg:w-[550px]  md:w-[500px]  w-[400px]  h-full">
+    <div className="Container  flex justify-center items-center  mx-auto lg:w-[550px] md:w-[500px] w-full  h-full">
       <div className=" mt-9 lg:mt-20">
-        <form  onSubmit={(e)=> {SubmitHandler(e)}}  className="  ml-[-40px] lg:mt-[240px]  mt-[200px]   lg:w-[500px]  md:w-[400px] w-[325px] ">
+        <form  onSubmit={(e)=> {SubmitHandler(e)}}  className="lg:mt-[240px]  mt-[250px]   lg:w-[500px]  md:w-[400px] w-[320px] ">
           <div>
             <div className="mt-2">
               <input

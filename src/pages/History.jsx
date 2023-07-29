@@ -8,14 +8,14 @@ import { toast } from 'react-hot-toast'
 const History = () => {
 
     const [change,setChange]= useState(false)
+    const [yes,setYes]= useState(false)
     const [data,setData]= useState()
     const [refreash, setRefresh] = useState()
     
     useEffect(()=>{
-        axios.get(' https://dhz-image.onrender.com/image/getallimage', {withCredentials:true})
+       axios.get(' https://dhz-image.onrender.com/image/getallimage', {withCredentials:true})
         .then( res => {setData(res.data)})
         .catch(err => console.log(err.response.data.message))
-
     },[refreash])
     
     const Fetchalldata= async ()=>{
@@ -34,17 +34,28 @@ const History = () => {
       await axios.delete(` https://dhz-image.onrender.com/image/${id}`,{withCredentials:true})
       .then(res => toast.success(res.data.message))
       .catch(err => toast.error(err.response.data.message))
+      if(data?.image.length > 0)
+      {
+        setYes(true)
+      }else{
+        setYes(false)
+      }
       setRefresh('noko')
       setChange(false)
     }
 
 
-
+  
+  
   
   return (
     <div  className="-mt-[16px] w-full h-screen bg-[#070813]" >
     <div ><Navbar/> </div> 
-     {((data?.image.slice(0).reverse())).map( e =><div key={e._id}   className="lg:w-[612px]  w-[360px]  mx-auto text-white   ">
+    <h1 className='text-center text-white text-[40px]'>Recent Generation</h1>
+
+{data?  <>
+
+  {((data?.image.slice(0).reverse())).map( e =><div key={e._id}   className="lg:w-[612px]  w-[360px]  mx-auto text-white   ">
        <div className="ml-10 mb-2 rounded-lg lg:w-[600px] sm:w-[275px] lg:mt-20 mt-10 bg-slate-900">
        <button disabled={change} onClick={()=> {deleteImage(e._id)}} className='ml-[86%] lg:ml-[93%]'> <img  src={Cross} alt=""  />  </button>
        <img  loading='lazy' src={e.imageUrl}  className=" lg:w-full lg:h-full w-[275px] h-[263px] rounded-md " alt="" />
@@ -54,6 +65,14 @@ const History = () => {
        
     </div>) 
     }
+</>  : 
+<>
+<h1  className='mt-20 text-center text-gray-500'> No History Found </h1>
+</>
+}
+
+
+     
     </div>
 
   )

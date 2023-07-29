@@ -53,6 +53,7 @@ const Home = () => {
           value={input}
           type="text"
           disabled={Loading}
+          required
           onChange={(e)=>setInput(e.target.value)}
           className=" indent-5 bg-[#121425]   text-white  lg:w-[50%] md:w-[65%] w-[90%] lg:h-14  md:h-10 rounded h-[58px] "
         />
